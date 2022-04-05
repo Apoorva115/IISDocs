@@ -65,8 +65,8 @@ We will make use of Loganalytics workspace to configure the alerts.
 
 		
 	4. Now to validate if the workspace is connected properly to the VM, we can go to "Logs" under the General section and run below two queries: 
-	a. Run "heartbeat" and make sure we see connectivity happening with the VM
-	b. Run "events" query and make sure we see event activity shown below.
+		a. Run "heartbeat" and make sure we see connectivity happening with the VM
+		b. Run "events" query and make sure we see event activity shown below.
 
 ![image](https://user-images.githubusercontent.com/81897348/161717653-6509ac45-c654-4e70-88e6-8aca01f66d64.png)
 
