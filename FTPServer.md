@@ -57,8 +57,8 @@ Consider a scenario where you are the server admin. You have given the responsib
 - We need to add under "Basic settings" ->  "Connect as" -> specify the storage account name and the access keys. 
 
 ![image](https://user-images.githubusercontent.com/81897348/161435442-78938dbf-fb7f-4f71-8eac-4964eed27dd2.png)
-
 1. Once this step is done, you have successfully configured the FTP site on Azure VM with File share on storage account. 
+ 
 		
 		
 		
