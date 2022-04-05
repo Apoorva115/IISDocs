@@ -105,3 +105,7 @@ You can refer more on how to manage/configure alerts from the article: https://d
 
 
 We have now succesfully configured log analytics to trigger alert whenever website is started/stopped from the on-prem IIS server. 
+
+# Conclusion 
+	
+By following the above mentioned steps, we have succesfully configured alerts from Loganalytics which will fire the alert whenever the website on IIS server is started or stopped.
