@@ -47,12 +47,10 @@ Consider a scenario where you are the server admin. You have given the responsib
 
 2. Open IIS on the server. 
 3. Create FTP site using the below steps: 
-	- Right click on the Site -> New FTP site
-	- Give FTP site name and Under physical Path , provide the path of the File share. 
-			
-![image](https://user-images.githubusercontent.com/81897348/161435409-8746bd96-943a-4e73-9527-6cf717a6f4fa.png).
-	
-- We need to add under "Basic settings" ->  "Connect as" -> specify the storage account name and the access keys.
+   - Right click on the Site -> New FTP site
+   - Give FTP site name and Under physical Path , provide the path of the File share. 			
+	![image](https://user-images.githubusercontent.com/81897348/161435409-8746bd96-943a-4e73-9527-6cf717a6f4fa.png).	
+   - We need to add under "Basic settings" ->  "Connect as" -> specify the storage account name and the access keys.
 
 
 
