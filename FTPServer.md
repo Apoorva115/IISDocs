@@ -52,7 +52,7 @@ Consider a scenario where you are the server admin. You have given the responsib
 			
 ![image](https://user-images.githubusercontent.com/81897348/161435409-8746bd96-943a-4e73-9527-6cf717a6f4fa.png)
 
-- We need to add under "Basic settings" ->  "Connect as" -> specify the storage account name and the access keys. 
+	- We need to add under "Basic settings" ->  "Connect as" -> specify the storage account name and the access keys. 
 
 ![image](https://user-images.githubusercontent.com/81897348/161435442-78938dbf-fb7f-4f71-8eac-4964eed27dd2.png).
 
