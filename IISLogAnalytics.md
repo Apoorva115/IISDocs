@@ -54,6 +54,54 @@ Started
 This event also shows the username who initiated the change. This is a very important data if you are tracking who changed certain IIS configuration. This in fact gives you the Security Identifier of the username (SID), and you can find the username by using psgetsid which is a part of our Windows Sysinternals tools (usage: psgetsid <SID>).
 You can also see what were the changes made, details about the configuration where the change was made, the old value of the configuration element, and the new value.
 
+Now that the server configuration part is done, lets move on to Azure Portal to configure alerts. 
+We will make use of Loganalytics workspace to configure the alerts. 
+
+	1. Open the Azure portal and go to Log Analytics Workspace. 
+	2. Open the Default workspace and select Agents configuration
+	3. Click on "Add windows events logs" and select "Microsoft-IIS-Configuration/Operational" from the dropdown. 
+
+![image](https://user-images.githubusercontent.com/81897348/161708690-6172b8e9-2ae6-4800-ba12-72d3d216e8aa.png)
+
+		
+	4. Now to validate if the workspace is connected properly to the VM, we can go to "Logs" under the General section and run below two queries: 
+	a. Run "heartbeat" and make sure we see connectivity happening with the VM
+	b. Run "events" query and make sure we see event activity shown below.
+
+![image](https://user-images.githubusercontent.com/81897348/161717653-6509ac45-c654-4e70-88e6-8aca01f66d64.png)
+
+
+Once we have confirmed that connectivity is succesfully established, then we can add the below events for website start and stop accordingly :
 
 
 
+	Event
+	| where EventLog == "Microsoft-IIS-Configuration/Operational"
+	| where EventData contains "STARTED"
+	
+	
+	Event
+	| where EventLog == "Microsoft-IIS-Configuration/Operational"
+	| where EventData contains "STOPPED"
+
+![image](https://user-images.githubusercontent.com/81897348/161718102-2b9a37f6-5800-4002-a99a-066e3109a41d.png)
+
+	
+
+	1. Then we will configure the alert by clicking on " + New alert rule".
+	2. The Condition tab will include the log query which is pasted above and we are configuring the alert to be fired every 15 minutes and check the data for every last 10 minutes.  Condition tab is where you can define what actions and notifications are triggered when the alert rule generates an alert
+	3. Under the Actions Tab, we will create EmailAlert by selecting the "Select Action groups". Specify the email address where you want the alert to be received. 
+	4. Under the Details Tab, specify the "Alert rule details" like  severity of the rule etc.
+	5. Under Advanced options, we select "enable upon creation"
+
+![image](https://user-images.githubusercontent.com/81897348/161718323-ee01e8de-0a06-4bd6-a8cb-a307d50b1130.png)
+	
+	6. You can specify tags if required. 
+	7. Then you can review and create the rule. 
+
+
+You can refer more on how to manage/configure alerts from the article: https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-activity-log
+
+
+
+We have now succesfully configured log analytics to trigger alert whenever website is started/stopped from the on-prem IIS server. 
