@@ -9,7 +9,7 @@ We will walk through on how FTP can be configured on an Azure VM. In addition to
 
 Consider a scenario where you are the server admin. You have given the responsibility of creating FTP site on server. There is a custom requirement to store the FTP files on Azure Storage account having a Fileshare.
 
-# Pre-requisites:
+# Pre-requisites
 
 1. For this demo, make sure we already have Azure VM deployed. If you don’t have one already, please refer the article on steps for creating a VM on Azure: https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal.
 2. Once VM is ready, please install IIS and FTP server. Follow the link: 
@@ -35,7 +35,7 @@ Consider a scenario where you are the server admin. You have given the responsib
 7. To test the functionality , we need to have Filezilla client installed on the VM. Here is the link to install Filezilla: https://filezilla-project.org/download.php?platform=win64
 	
 	
-# Implementaion:
+# Implementaion
 
 1. Before creating FTP site, we need to create user having same name as the storage account name and Password as the access keys. 
 	- Open lusrmgr.msc on the IIS Azure VM
@@ -61,7 +61,7 @@ Consider a scenario where you are the server admin. You have given the responsib
 		
 		
 		
-# Testing: 
+# Testing
 
 1. To test if the configuration is working properly, lets connect with FTP client Filezilla to the Azure VM
 1. Download Filezilla client for windows OS.
@@ -71,6 +71,6 @@ Consider a scenario where you are the server admin. You have given the responsib
 
 ![image](https://user-images.githubusercontent.com/81897348/161435758-bf241b63-1ca2-4c86-8b60-bf209a9b2800.png)
 
-# Conclusion: 
+# Conclusion
 
 By following the above steps, we have succesfully configured FTP site having home directory pointing to Azure File share on storage account. 
