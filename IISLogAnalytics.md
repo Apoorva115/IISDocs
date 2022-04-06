@@ -62,7 +62,7 @@ We will make use of Loganalytics workspace to configure the alerts.
 - Run "events" query and make sure we see event activity shown below.
 
 ![image](https://user-images.githubusercontent.com/81897348/161717653-6509ac45-c654-4e70-88e6-8aca01f66d64.png)
-6. Once we have confirmed that connectivity is succesfully established, then we can add the below events for website start and stop accordingly:
+6. Once we have confirmed that connectivity is succesfully established, then we can add the below events for website start and stop accordingly. We need to add two log query as below and create separate alert rule for both these queries:
 
 
 
